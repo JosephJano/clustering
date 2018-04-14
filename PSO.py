@@ -60,7 +60,7 @@ def PSO (npart,k,in_max,in_min,c1,c2,maxit,arqStr):
 	rho2 = [uniform(0,1) for i in range(0,len(x[0]))]
 	for i in range (0,maxit):
 		inertia = (in_max-in_min)*((maxit-i+1)/maxit)+in_min
-		print "Iteracao %s" % (i+1) ,
+		print ("Iteracao %s" % (i+1)) ,
 		fit = [particle.fitness(x) for particle in swarm]
 		#if min(fit) < gbest.fitness(x,gbest.assign(x)):
 		gbest = deepcopy(swarm[np.argmax(fit)])
@@ -82,4 +82,4 @@ def PSO (npart,k,in_max,in_min,c1,c2,maxit,arqStr):
 	return gbest.position
 
 if __name__ == '__main__':
-	print PSO(int(argv[1]),int(argv[2]),float(argv[3]),float(argv[4]),float(argv[5]),float(argv[6]),int(argv[7]),argv[8])
+	print (PSO(int(argv[1]),int(argv[2]),float(argv[3]),float(argv[4]),float(argv[5]),float(argv[6]),int(argv[7]),argv[8]))
